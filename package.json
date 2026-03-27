@@ -1,0 +1,49 @@
+{
+  "name": "create-zuz-app",
+  "version": "1.0.55",
+  "keywords": [
+    "react",
+    "zuz",
+    "zuz.js"
+  ],
+  "description": "Create Zuz.js-powered React apps with one command",
+  "author": "Zuz.js Team <support@zuz.com.pk>",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "create-zuz-app": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev:js": "tsup --watch",
+    "dev": "npm-run-all -p dev:*",
+    "build": "rm -rf dist && tsup",
+    "publish": "npm run build && node publish-pre.js && npm publish && node publish-post.js"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "@types/prompts": "2.4.2",
+    "husky": "^9.1.7",
+    "prompts": "2.4.2",
+    "tar": "7.5.7",
+    "update-check": "1.5.4",
+    "validate-npm-package-name": "7.0.2",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.2"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
